@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Zotero
+Exec=zotero
+Icon=application
+Terminal=false
