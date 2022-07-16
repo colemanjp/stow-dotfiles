@@ -12,7 +12,7 @@ then
 fi
 export PATH
 
-# Set EDITOR here in addtion to bash_profile since aliases need it and .bash_profile calls .bashrc first
+# Set EDITOR here in addtion to .bash_profile since aliases need it and .bash_profile calls .bashrc first
 if hash nvim 2>/dev/null; then
   export EDITOR=nvim
 elif hash vim 2>/dev/null; then
