@@ -1,4 +1,6 @@
 set nomodeline
+set ignorecase
+set smartcase
 
 " convert tabs to spaces
 " set tabstop=4 shiftwidth=4 expandtab
