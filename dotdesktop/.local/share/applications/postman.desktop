@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Postman
+Exec=postman
+Icon=application
+Terminal=false
