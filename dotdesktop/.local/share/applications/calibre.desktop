@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=calibre
+Exec=calibre
+Icon=application
+Terminal=false
