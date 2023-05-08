@@ -27,6 +27,3 @@ fi
 unset rc
 
 set -o vi
-
-alias fscale="gsettings set org.gnome.desktop.interface text-scaling-factor"
-alias dscale="gnome-control-center -s display"
