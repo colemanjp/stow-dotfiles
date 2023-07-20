@@ -16,3 +16,4 @@ if has('persistent_undo')
 endif
 
 silent! colorscheme afterglow
+silent! let g:afterglow_inherit_background=1
