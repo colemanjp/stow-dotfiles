@@ -1,0 +1,9 @@
+! xterm configuration
+xterm*faceName: Source Code Pro
+xterm*faceSize: 15
+xterm*SimpleMenu*font: -adobe-helvetica-medium-r-normal--*-140-*-*-*-*-iso8859-*
+xterm*SimpleMenu*Background: AntiqueWhite
+xterm*savelines: 4096
+xterm*vt100*translations: #override \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
