@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Vit
+Exec=vit
+Icon=application
+Terminal=true
