@@ -18,3 +18,6 @@ endif
 
 silent! colorscheme afterglow
 silent! let g:afterglow_inherit_background=1
+
+" Leader is \ by default
+map <leader>D :put =strftime('# %a %Y-%m-%d %H:%M:%S%z')<CR>
