@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Logseq
+Exec=logseq
+Icon=application
+Terminal=false

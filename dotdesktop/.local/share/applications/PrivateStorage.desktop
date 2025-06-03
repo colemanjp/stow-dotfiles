@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=PrivateStorage
+Exec=PrivateStorage-Linux.AppImage
+Icon=application
+Terminal=false
