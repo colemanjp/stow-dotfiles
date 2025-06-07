@@ -29,3 +29,8 @@ unset rc
 set -o vi
 
 alias vi="nvim"
+
+HISTSIZE=100000 # Number of entries kept in memory
+HISTFILESIZE=100000 # Number of entries kept in the file
+HISTTIMEFORMAT='%F %T ' # Entries will be stored according to a pattern, in this case with date and time
+HISTCONTROL=ignoreboth # Don't store duplicates and entries starting with a space
