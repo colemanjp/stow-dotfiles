@@ -32,9 +32,19 @@ end
 lazy.path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 lazy.opts = {}
 
+-- Install plugins with lazy.nvim
 lazy.setup({
-  -- List of plugins
-	 {'folke/tokyonight.nvim'}
+   {'folke/tokyonight.nvim'},
+   {'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
+   {'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' }},
+   {'nvim-orgmode/orgmode' },
+   {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"}
+})
+
+require('lualine').setup()
+require('orgmode').setup({
+      org_agenda_files = '~/orgfiles/**/*',
+      org_default_notes_file = '~/orgfiles/refile.org',
 })
 
 -- settings
