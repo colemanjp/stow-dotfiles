@@ -3,7 +3,7 @@
   editor: vim
   
   # Should 'cheat' always colorize output?
-  colorize: true
+  colorize: false
   
   # Which 'chroma' colorscheme should be applied to the output?
   # Options are available here:
@@ -54,6 +54,11 @@
     #  path: PERSONAL_PATH
     #  tags: [ personal ]
     #  readonly: false
+    
+    - name: personal
+      path: ~/.config/cheat/cheatsheets/personal
+      tags: [ personal ]
+      readonly: false
   
     # While it requires no configuration here, it's also worth noting that
     # 'cheat' will automatically append directories named '.cheat' within the
