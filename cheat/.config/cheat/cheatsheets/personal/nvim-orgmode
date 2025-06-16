@@ -1,0 +1,34 @@
+# Help 
+g?
+
+# Quick capture
+<LEADER>oc
+
+# Agenda view
+<LEADER>oa
+
+# Tag task or heading
+<LEADER>ot
+
+# File TODO from refile.org
+<LEADER>or
+
+# Tag
+:tagname:
+
+# Todo
+TODO
+
+# Todo toggle
+cit
+
+# Deadline
+DEADLINE:<2025-06-05>
+
+# Fold heading
+<TAB>
+
+# Heading
+* 
+
+
