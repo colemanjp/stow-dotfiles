@@ -4,14 +4,21 @@ g?
 # Quick capture
 <LEADER>oc
 
+:Org capture
+
 # Agenda view
 <LEADER>oa
+
+:Org agenda
 
 # Tag task or heading
 <LEADER>ot
 
-# File TODO from refile.org
+# File TODO
 <LEADER>or
+
+# Archive
+<LEADER>o$
 
 # Tag
 :tagname:
@@ -22,13 +29,26 @@ TODO
 # Todo toggle
 cit
 
-# Deadline
+# Deadline picker
+<LEADER>oid
+
+# Deadline format
 DEADLINE:<2025-06-05>
+
+# Follow link
+<LEADER>oo
+
+# Link format
+[[file:./example.org::]]
+[[file:~/Documents/example.txt::]]
+[[https://www.example.com/]]
+
 
 # Fold heading
 <TAB>
 
-# Heading
-* 
+# Headings
+* Heading
+** Sub Heading
 
 
