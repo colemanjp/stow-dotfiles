@@ -54,6 +54,7 @@ vim.opt.wrap = true
 vim.opt.breakindent = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
+vim.opt.modeline = true
 vim.opt.smartcase = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -62,3 +63,4 @@ vim.cmd.colorscheme('tokyonight')
 
 -- keymaps
 vim.keymap.set('n', '<leader>D', 'a<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR><Esc>', { desc = 'Append date' })
+vim.keymap.set('n', '<leader>C', 'i# vi: set textwidth=80 noundofile noswapfile nobackup:<Esc>', { desc = 'Insert vi modeline' })
