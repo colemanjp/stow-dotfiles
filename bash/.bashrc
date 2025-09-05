@@ -29,6 +29,8 @@ unset rc
 set -o vi
 
 alias vi="nvim"
+alias task="nvim -c 'lua require(\"orgmode\").action(\"capture.prompt\")'"
+alias agenda="nvim -c 'lua require(\"orgmode\").action(\"agenda.prompt\")'"
 
 HISTSIZE=100000 # Number of entries kept in memory
 HISTFILESIZE=100000 # Number of entries kept in the file
