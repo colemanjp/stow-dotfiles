@@ -29,6 +29,7 @@ unset rc
 set -o vi
 
 alias vi="nvim"
+alias vip="nvim --clean -n -i NONE -c 'set nobackup nowritebackup noundofile nomodeline noexrc clipboard= noshelltemp secure'"
 alias task="nvim -c 'lua require(\"orgmode\").action(\"capture.prompt\")'"
 alias agenda="nvim -c 'lua require(\"orgmode\").action(\"agenda.prompt\")'"
 
