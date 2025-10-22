@@ -21,7 +21,7 @@ function lazy.setup(plugins)
   end
 
   -- You can "comment out" the line below after lazy.nvim is installed
-  -- lazy.install(lazy.path)
+  lazy.install(lazy.path)
 
   vim.opt.rtp:prepend(lazy.path)
 
@@ -45,6 +45,7 @@ lazy.setup({
 require('lualine').setup()
 require('orgmode').setup({
       org_agenda_files = '~/orgfiles/**/*',
+      org_archive_location = '~/orgfiles/archives/%s_archive::',
       org_default_notes_file = '~/orgfiles/refile.org',
 })
 
