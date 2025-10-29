@@ -64,4 +64,4 @@ vim.opt.termguicolors = true
 
 -- keymaps
 vim.keymap.set('n', '<leader>D', 'a<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR><Esc>', { desc = 'Append date' })
-vim.keymap.set('n', '<leader>C', 'i# vi: set textwidth=80 noundofile noswapfile nobackup:<Esc>', { desc = 'Insert vi modeline' })
+vim.keymap.set('n', '<leader>C', 'i# vi: set textwidth=80 noundofile noswapfile nobackup nowritebackup clipboard= noshelltemp:<Esc>', { desc = 'Insert vi modeline' })
