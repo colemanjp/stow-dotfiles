@@ -7,5 +7,6 @@ common:
 	stow vim
 laptop: common
 	stow dotdesktop
+	stop dotlocal
 	stow recoll
 	stow fonts
