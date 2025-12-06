@@ -35,6 +35,18 @@ cit
 # Deadline format
 DEADLINE:<2025-06-05>
 
+# Deadline with repeater
+DEADLINE:<2025-06-05 +1d>
+Repeats
+Daily 1d
+Weekly 1w
+Monthly 1m
+Yearly 1y
+
+Optional warning period after repeater
+DEADLINE:<2025-06-05 +1m -3d>
+
+
 # Follow link
 <LEADER>oo
 
