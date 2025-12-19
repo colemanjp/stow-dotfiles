@@ -1,0 +1,8 @@
+# Always enable extended mode
+-e
+
+# Delete sends files to trash
+--delete-command gio trash --
+
+# Exclude .git directories
+--exclude .git
