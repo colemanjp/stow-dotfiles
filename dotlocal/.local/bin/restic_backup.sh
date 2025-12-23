@@ -3,16 +3,6 @@
 passwordcommand="secret-tool lookup key restic-${HOSTNAME}"
 excludefile="${HOME}/.restic/exclude.txt"
 
-# Timestamps
-# Store epoch timestamp for exclude file
-excludefiletse=$(stat -c %Y "${excludefile}")
-# Store last backup in json
-lastbackupjs=$(restic -r /mnt/backups snapshots --json --latest 1 --password-command="${passwordcommand}")
-# Store last backup timestamp from json
-lastbackupts=$(echo "${lastbackupjs}" | jq -r '.[0].time')
-# Store last backuptimestamp in epoch format
-lastbackuptse=$(date -d "${lastbackupts}" +%s)
-
 # Mount backup target
 if ! findmnt /mnt/backups > /dev/null 2>&1;then
   printf "/mnt/backups not mounted. Would you like to mount it? (y/n) " 
@@ -24,6 +14,16 @@ if ! findmnt /mnt/backups > /dev/null 2>&1;then
     exit 1
   fi
 fi 
+
+# Timestamps
+# Store epoch timestamp for exclude file
+excludefiletse=$(stat -c %Y "${excludefile}")
+# Store last backup in json
+lastbackupjs=$(restic -r /mnt/backups snapshots --json --latest 1 --password-command="${passwordcommand}")
+# Store last backup timestamp from json
+lastbackupts=$(echo "${lastbackupjs}" | jq -r '.[0].time')
+# Store last backuptimestamp in epoch format
+lastbackuptse=$(date -d "${lastbackupts}" +%s)
 
 printf "Running restic backup"
 
