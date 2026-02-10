@@ -48,6 +48,7 @@ require('orgmode').setup({
       org_agenda_files = '~/orgfiles/**/*',
       org_archive_location = '~/orgfiles/archives/%s_archive::',
       org_default_notes_file = '~/orgfiles/refile.org',
+      org_todo_keywords = {'TODO','WAITING','|','DONE'},
 })
 
 -- settings
@@ -59,6 +60,7 @@ vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.modeline = true
 vim.opt.smartcase = true
+vim.opt.inccommand = "split"
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop=2
@@ -67,6 +69,7 @@ vim.opt.termguicolors = true
 vim.opt.exrc = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevelstart = 99
 
 -- keymaps
 vim.keymap.set('n', '<leader>D', 'a<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR><Esc>', { desc = 'Append date' })
