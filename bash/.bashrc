@@ -6,9 +6,9 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+if ! [[ "$PATH" =~ "$HOME/go/bin:$HOME/bin/calibre:" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+    PATH="$HOME/go/bin:$HOME/bin/calibre:$PATH"
 fi
 export PATH
 
@@ -37,3 +37,5 @@ HISTSIZE=100000 # Number of entries kept in memory
 HISTFILESIZE=100000 # Number of entries kept in the file
 HISTTIMEFORMAT='%F %T ' # Entries will be stored according to a pattern, in this case with date and time
 HISTCONTROL=ignoreboth # Don't store duplicates and entries starting with a space
+
+FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
