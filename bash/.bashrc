@@ -6,9 +6,9 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/go/bin:$HOME/bin/calibre:" ]]
+if ! [[ "$PATH" =~ "$HOME/go/bin:$HOME/bin/calibre:$HOME/.local/bin:$HOME/bin:" ]]
 then
-    PATH="$HOME/go/bin:$HOME/bin/calibre:$PATH"
+    PATH="$HOME/go/bin:$HOME/bin/calibre:$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
