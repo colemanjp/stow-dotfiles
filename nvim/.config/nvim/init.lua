@@ -34,6 +34,7 @@ lazy.opts = {}
 
 -- Install plugins with lazy.nvim
 lazy.setup({
+   {'rebelot/kanagawa.nvim'},
    {'folke/tokyonight.nvim'},
    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
    {'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = {'nvim-lua/plenary.nvim'}},
@@ -70,6 +71,7 @@ vim.opt.exrc = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevelstart = 99
+vim.cmd.colorscheme('kanagawa')
 
 -- keymaps
 vim.keymap.set('n', '<leader>D', 'a<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR><Esc>', { desc = 'Append date' })
