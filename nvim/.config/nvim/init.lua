@@ -48,7 +48,7 @@ require('lualine').setup()
 require('orgmode').setup({
       org_agenda_files = '~/Documents/orgfiles/**/*',
       org_archive_location = '~/Documents/orgfiles/archives/%s_archive::',
-      org_default_notes_file = '~/Documents/orgfiles/refile.org',
+      org_default_notes_file = '~/Documents/orgfiles/inbox.org',
       org_todo_keywords = {'TODO','WAITING','|','DONE'},
 })
 
@@ -72,7 +72,10 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevelstart = 99
 vim.cmd.colorscheme('kanagawa')
-
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "org" },
+  callback = function() vim.opt_local.textwidth = 80 end,
+})
 -- keymaps
-vim.keymap.set('n', '<leader>D', 'a<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR><Esc>', { desc = 'Append date' })
-vim.keymap.set('n', '<leader>C', 'i# vi: set textwidth=80 noundofile noswapfile nobackup nowritebackup clipboard= noshelltemp:<Esc>', { desc = 'Insert vi modeline' })
+vim.keymap.set('n', '<leader>D', 'a[<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR>]<Esc>', { desc = 'Append date' })
+vim.keymap.set('n', '<leader>C', 'i# vi: set textwidth=80 noundofile noswapfile nobackup nowritebackup clipboard= noshelltemp:<Esc>', { desc = 'Insert more "secure" modeline' })
