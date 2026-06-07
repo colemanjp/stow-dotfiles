@@ -34,6 +34,41 @@ lazy.opts = {}
 
 -- Install plugins with lazy.nvim
 lazy.setup({
+   {
+     "obsidian-nvim/obsidian.nvim",
+     version = "*", -- use latest release, remove to use latest commit
+     ---@module 'obsidian'
+     ---@type obsidian.config
+     opts = {
+       legacy_commands = false, -- this will be removed in 4.0.0
+       ui = { enable = false },
+       workspaces = {
+         {
+           name = "work",
+           path = "~/Documents/vaults/work",
+         },
+       },
+       note_id_func = function(title)
+         if title ~= nil then
+           return title
+         end
+         local suffix = ""
+         for _ = 1, 4 do
+           suffix = suffix .. string.char(math.random(65, 90))
+         end
+         return tostring(os.time()) .. "-" .. suffix
+       end,
+      },
+     },
+   {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+   },
    {'rebelot/kanagawa.nvim'},
    {'folke/tokyonight.nvim'},
    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
