@@ -47,6 +47,10 @@ lazy.setup({
            name = "work",
            path = "~/Documents/vaults/work",
          },
+         {
+           name = "personal",
+           path = "~/Documents/vaults/personal",
+         },
        },
        note_id_func = function(title)
          if title ~= nil then
