@@ -75,11 +75,14 @@ lazy.setup({
    },
    {'rebelot/kanagawa.nvim'},
    {'folke/tokyonight.nvim'},
+   {'ellisonleao/gruvbox.nvim'},
+   {'sainnhe/gruvbox-material'},
    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
    {'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = {'nvim-lua/plenary.nvim'}},
 	 {"nvim-telescope/telescope-file-browser.nvim", dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}},
    {'nvim-orgmode/orgmode'},
-   {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+   -- {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+   { "nvim-treesitter/nvim-treesitter", branch = "main",build = ":TSUpdate", config = function() require("nvim-treesitter").setup({}) end, },
    {"lervag/vimtex", lazy = false, init = function() vim.g.vimtex_view_method = "zathura" vim.g.vimtex_compiler_method = "latexmk" end}
 })
 
@@ -110,11 +113,11 @@ vim.opt.exrc = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevelstart = 99
-vim.cmd.colorscheme('kanagawa')
+vim.cmd.colorscheme('gruvbox-material')
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "markdown", "text", "org" },
   callback = function() vim.opt_local.textwidth = 80 end,
 })
 -- keymaps
-vim.keymap.set('n', '<leader>D', 'a[<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR>]<Esc>', { desc = 'Append date' })
+vim.keymap.set('n', '<leader>D', 'a<C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR><Esc>', { desc = 'Append date' })
 vim.keymap.set('n', '<leader>C', 'i# vi: set textwidth=80 noundofile noswapfile nobackup nowritebackup clipboard= noshelltemp:<Esc>', { desc = 'Insert more "secure" modeline' })
