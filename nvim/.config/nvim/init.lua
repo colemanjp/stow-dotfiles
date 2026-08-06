@@ -64,24 +64,22 @@ lazy.setup({
        end,
       },
      },
-   {
-    'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {},
-   },
+   { 'MeanderingProgrammer/render-markdown.nvim', dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, opts = {}, },
+   { "folke/snacks.nvim", opts = { image = { enabled = true } } },
    {'rebelot/kanagawa.nvim'},
    {'folke/tokyonight.nvim'},
    {'ellisonleao/gruvbox.nvim'},
    {'sainnhe/gruvbox-material'},
    {'nvim-lualine/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}},
-   {'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = {'nvim-lua/plenary.nvim'}},
-	 {"nvim-telescope/telescope-file-browser.nvim", dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}},
-   {'nvim-orgmode/orgmode'},
-   -- {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+   {
+       'nvim-telescope/telescope.nvim', version = '*',
+       dependencies = {
+           'nvim-lua/plenary.nvim',
+           -- optional but recommended
+           { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+       }
+   },
+      {'nvim-orgmode/orgmode'},
    { "nvim-treesitter/nvim-treesitter", branch = "main",build = ":TSUpdate", config = function() require("nvim-treesitter").setup({}) end, },
    {"lervag/vimtex", lazy = false, init = function() vim.g.vimtex_view_method = "zathura" vim.g.vimtex_compiler_method = "latexmk" end}
 })
@@ -108,6 +106,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop=2
 vim.opt.expandtab = true
+vim.opt.spell = true
 vim.opt.termguicolors = true
 vim.opt.exrc = true
 vim.opt.foldmethod = "expr"
