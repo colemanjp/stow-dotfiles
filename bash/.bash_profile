@@ -7,5 +7,5 @@ fi
 
 # User specific environment and startup programs
 
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
