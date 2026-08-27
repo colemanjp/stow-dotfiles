@@ -1,0 +1,33 @@
+[
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 273,
+                "origin_hash": "c95f85026f7dc5241f3821bfb095840a"
+            }
+        ],
+        "target_uinput": "mouse",
+        "output_symbol": "BTN_MIDDLE",
+        "name": "Mouse button middle",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 29,
+                "origin_hash": "e6de51ebed2eb067e7a274c8ad521f8b"
+            },
+            {
+                "type": 1,
+                "code": 46,
+                "origin_hash": "e6de51ebed2eb067e7a274c8ad521f8b"
+            }
+        ],
+        "target_uinput": "mouse",
+        "output_symbol": "BTN_RIGHT",
+        "name": "Mouse button right",
+        "mapping_type": "key_macro"
+    }
+]
