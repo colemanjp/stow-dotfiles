@@ -1,5 +1,5 @@
 #!/bin/bash
-passwordcommand="secret-tool lookup key restic-${HOSTNAME}"
+passwordcommand="kwallet-query -f restic -r restic-${HOSTNAME} Default"
 excludefile="${HOME}/.restic/exclude.txt"
 # Define backup targets
 target1="/mnt/backups"
